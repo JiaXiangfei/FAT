@@ -85,8 +85,6 @@ FAT_Classification
 <br><br>
 </p>
 
-**Results of in‐domain regression**  
-Full results for the in-domain setting of forecasting. Pre-training and fine-tuning are performed on the same datasets. The standard deviations are within 0.005 for MSE and within 0.004 for MAE.
 
 ## Citation
 If you find this repo useful, please cite our paper.
