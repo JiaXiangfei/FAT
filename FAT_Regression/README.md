@@ -5,6 +5,8 @@
 ![PyTorch 2.4.1](https://img.shields.io/badge/PyTorch-2.4.1-%23EE4C2C.svg?style=plastic)
 ![CUDA 12.2](https://img.shields.io/badge/CUDA-12.2-green.svg?style=plastic)
 ![License CC BY-NC-SA](https://img.shields.io/badge/license-CC_BY--NC--SA--green.svg?style=plastic)
+<a href="https://doi.org/10.5281/zenodo.15586685"><img src="https://zenodo.org/badge/995535628.svg" alt="DOI"></a>
+
 
 The repo is the official implementation for the paper: "FAT: Frequency-Aware Pretraining for Enhanced Time-Series Representation Learning". 
 
