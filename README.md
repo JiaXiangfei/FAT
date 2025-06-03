@@ -14,7 +14,7 @@ We gratefully acknowledge [Informer](https://github.com/zhouhaoyi/Informer2020),
 ## Architecture
 
 <p align="center">
-  <img src="\FAT_Regression\figs\fig_main_0210.png" alt="Knowledge-Guided Frequency Reformer" width="80%" />
+  <img src=".\FAT_Regression\figs\fig_main_0210.png" alt="Knowledge-Guided Frequency Reformer" width="80%" />
   <br><br>
   <b>Figure 1.</b> Overview of FAT model.
 </p>
