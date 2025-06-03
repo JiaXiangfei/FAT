@@ -110,7 +110,7 @@ If you find this repo useful, please cite our paper.
 
 ## Contact
 
-If you have any questions, please contact the author [224081200057@smail.swufe.edu.cn](mailto:224081200057@smail.suwfe.edu.cn).
+If you have any questions, please contact the author [jiaxiangfei22@gmail.com](mailto:jiaxiangfei22@gmail.com).
 
 ## Acknowledgement
 
