@@ -100,10 +100,10 @@ bash ./code/scripts/EMG.sh
 If you find this repo useful, please cite our paper.
 
 ```plain
-@inproceedings{2025FAT,
+@inproceedings{cheng2025fat,
   title={FAT: Frequency-Aware Pretraining for Enhanced Time-Series Representation Learning},
-  author={Rui Cheng, Xiangfei Jia, Qing Li, Rong Xing, Jiwen Huang, Yu Zheng, Zhilong Xie},
-  booktitle={Proceedings of the ACM SIGKDD Conference on Knowledge Discovery and Data Mining (SIGKDD)},
+  author={Cheng, Rui and Jia, Xiangfei and Li, Qing and Xing, Rong and Huang, Jiwen and Zheng Yu and Xie, Zhilong},
+  booktitle={Proceedings of the 31th ACM SIGKDD Conference on Knowledge Discovery and Data Mining},
   year={2025}
 }
 ```
