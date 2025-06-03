@@ -81,7 +81,7 @@ FAT_Classification
 ## Main Results
 
 <p align="center">
-<img src=".\FAT_Regression\figs\full_result.jpg" alt="" align=center />
+<img src=".\FAT_Regression\figs\full_result.png" alt="" align=center />
 <br><br>
 </p>
 
