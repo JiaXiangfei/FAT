@@ -1,0 +1,19 @@
+python ./code/main.py \
+  --target_dataset FD-B \
+  --pretrain_epoch 30 \
+  --finetune_epoch 300 \
+  --gpu_id 0 \
+  --pretrain_lr 5e-4 \
+  --lr 4e-2 \
+  --ft_dropout 0.2 \
+  --onelayer_out_channels 64 \
+  --twolayer_out_channels 128 \
+  --final_out_channels 256 \
+  --kernel_size 32 \
+  --stride 2 \
+  --conv2_kernel_size 16 \
+  --conv3_kernel_size 16 \
+  --d_ff 64 \
+  --num_classes_target 3 \
+  --hidden_dimension 3328 \
+  --n_knlg 8

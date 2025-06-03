@@ -1,0 +1,19 @@
+python ./code/main.py \
+  --target_dataset Epilepsy \
+  --pretrain_epoch 30 \
+  --finetune_epoch 300 \
+  --gpu_id 0 \
+  --pretrain_lr 5e-5 \
+  --lr 5e-3 \
+  --ft_dropout 0.2 \
+  --onelayer_out_channels 128 \
+  --twolayer_out_channels 256 \
+  --final_out_channels 512 \
+  --kernel_size 32 \
+  --conv2_kernel_size 16 \
+  --conv3_kernel_size 16 \
+  --d_ff 128 \
+  --num_classes_target 2 \
+  --hidden_dimension 6656 \
+  --stride 2 \
+  --n_knlg 8
