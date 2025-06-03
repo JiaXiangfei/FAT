@@ -5,6 +5,7 @@
 ![PyTorch 2.4.1](https://img.shields.io/badge/PyTorch-2.4.1-%23EE4C2C.svg?style=plastic)
 ![CUDA 12.2](https://img.shields.io/badge/CUDA-12.2-green.svg?style=plastic)
 ![License CC BY-NC-SA](https://img.shields.io/badge/license-CC_BY--NC--SA--green.svg?style=plastic)
+<a href="https://doi.org/10.5281/zenodo.15586685"><img src="https://zenodo.org/badge/995535628.svg" alt="DOI"></a>
 
 The repo is the official implementation for the paper: "FAT: Frequency-Aware Pretraining for Enhanced Time-Series Representation Learning". 
 
@@ -26,7 +27,7 @@ FAT learns consistent and generalizable frequency patterns from time-domain sign
 
 1、Prepare Data And Code. 
 
-All benchmark datasets can be obtained from [Google Drive](https://drive.google.com/file/d/1CC4ZrUD4EKncndzgy5PSTzOPSqcuyqqj/view?usp=sharing) or [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/f/a238e34ff81a42878d50/?dl=1), and arrange the folder as:
+All datasets can be obtained from [Google Drive](https://drive.google.com/file/d/1CC4ZrUD4EKncndzgy5PSTzOPSqcuyqqj/view?usp=sharing) or [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/f/a238e34ff81a42878d50/?dl=1), and arrange the folder as:
 
 ```
 FAT/
@@ -83,6 +84,7 @@ FAT_Classification
 <p align="center">
 <img src=".\FAT_Regression\figs\full_result.png" alt="" align=center />
 <br><br>
+<b>Figure 2.</b> Full result of FAT model.
 </p>
 
 
@@ -100,7 +102,7 @@ If you find this repo useful, please cite our paper.
 
 ## Contact
 
-If you have any questions, please contact the author [jiaxiangfei@swufe.edu.cn](mailto:224081200057@smail.suwfe.edu.cn).
+If you have any questions, please contact the author [224081200057@smail.swufe.edu.cn](mailto:224081200057@smail.suwfe.edu.cn).
 
 ## Acknowledgement
 
