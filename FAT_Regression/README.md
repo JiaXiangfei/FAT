@@ -50,12 +50,18 @@ FAT/
     |-- results/
         |-- 
     |-- scripts/
-        |-- ETTh2.sh/
-        |-- ETTm1.sh/
+        |-- ETTh2.sh
+        |-- ETTm1.sh
     |-- utils/
     run.py
 |-- FAT_Classification/
-
+    |-- code/
+        |-- layers/
+        |-- scripts/
+        |-- utils/
+        |-- dataloader.py
+    |-- dateset/
+        |--...
 ```
 
 2、Pretrain And Finetune. 
@@ -72,6 +78,7 @@ bash ./scripts/ETTh2.sh
 bash ./scripts/weather.sh
 
 FAT_Classification
+bash ./code/scripts/EMG.sh
 
 ```
 
