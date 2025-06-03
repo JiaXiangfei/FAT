@@ -28,7 +28,7 @@ FAT learns consistent and generalizable frequency patterns from time-domain sign
 
 1、Prepare Data And Code. 
 
-All benchmark datasets can be obtained from [Google Drive](https://drive.google.com/file/d/1CC4ZrUD4EKncndzgy5PSTzOPSqcuyqqj/view?usp=sharing) or [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/f/a238e34ff81a42878d50/?dl=1), and arrange the folder as:
+All datasets can be obtained from [Google Drive](https://drive.google.com/file/d/1CC4ZrUD4EKncndzgy5PSTzOPSqcuyqqj/view?usp=sharing) or [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/f/a238e34ff81a42878d50/?dl=1), and arrange the folder as:
 
 ```
 FAT/
