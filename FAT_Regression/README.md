@@ -90,12 +90,11 @@ bash ./code/scripts/EMG.sh
 ## Main Results
 
 <p align="center">
-<img src=".\figs\full_result.jpg" alt="" align=center />
-<br><br>
+  <img src=".\FAT_Regression\figs\full_result.jpg" alt="" align=center />
+  <br><br>
+  <b>Figure 2.</b> Full result of FAT model.
 </p>
 
-**Results of in‐domain regression**  
-Full results for the in-domain setting of forecasting. Pre-training and fine-tuning are performed on the same datasets. The standard deviations are within 0.005 for MSE and within 0.004 for MAE.
 
 ## Citation
 If you find this repo useful, please cite our paper.
@@ -111,7 +110,7 @@ If you find this repo useful, please cite our paper.
 
 ## Contact
 
-If you have any questions, please contact the author [jiaxiangfei@swufe.edu.cn](mailto:224081200057@smail.suwfe.edu.cn).
+If you have any questions, please contact the author [224081200057@smail.swufe.edu.cn](mailto:224081200057@smail.suwfe.edu.cn).
 
 ## Acknowledgement
 
