@@ -307,7 +307,7 @@ class Model(nn.Module):
         positive_enc_out = enc_out[bs * n_vars:].reshape(bs * n_vars, self.configs.positive_nums, -1)
         negative_enc_out = positive_enc_out[:, 0, :][negative_index]
         rebuild_weight_matrix = self.softmax(similarity_matrix)
-        pos_att  = rebuild_weight_matrix[:, :self.configs.positive_nums].unsqueeze(1)
+        pos_att = rebuild_weight_matrix[:, :self.configs.positive_nums].unsqueeze(1)
         neg_att =  rebuild_weight_matrix[:, self.configs.positive_nums:].unsqueeze(1)
         rebuild_embed = torch.matmul(pos_att, positive_enc_out) + torch.matmul(neg_att, negative_enc_out)
         rebuild_embed = rebuild_embed.reshape(bs, n_vars, seq_len, -1)
@@ -327,7 +327,7 @@ class Model(nn.Module):
         z = self.revin_layer_encoder(z, 'norm')
         x = z
         x = x.permute(0, 2, 1)
-        if self.configs.forcastMode == "freq":
+        if self.configs.forecastModee == "freq":
             x, _ = self.KnowledgeGuide_encoder(x)
             x = x.reshape(-1, seq_len, 1)
         else:
