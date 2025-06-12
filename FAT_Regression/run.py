@@ -94,7 +94,7 @@ parser.add_argument('--masked_rule', type=str, default='geometric', help='geomet
 parser.add_argument('--pretrain_mode', type=str, default='1', help='0:native_masking, 1:contrast_with_noise')
 parser.add_argument('--mask_rate', type=float, default=0.5, help='mask ratio')
 parser.add_argument('--distort', type=bool, default=True, help='whether_to_distort')
-parser.add_argument('--forcastMode', type=str, default='freq', help='freq or unfreq')
+parser.add_argument('--forecastMode', type=str, default='freq', help='freq or unfreq')
 
 
 parser.add_argument('--n_fft', type=int, default=128, help='Number of FFT points for STFT')
