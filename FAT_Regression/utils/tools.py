@@ -350,30 +350,6 @@ def STFT(x, n_fft, hop_length, win_length, window, top_k, k):
     return freq, res, sim_matrix
 
 
-def FFT_sim(x, k):
-    batch_size, seq_len, n_vars = x.shape
-    x = x.permute(0, 2, 1).reshape(batch_size * n_vars, seq_len)
-    # Perform STFT
-    fft_result = torch.fft.fft(x)
-    # Calculate magnitudes
-    magnitude = torch.abs(fft_result)
-    
-    freq_normalized = torch.nn.functional.normalize(magnitude, p=2, dim=1)
-    
-    sim_matrix = torch.matmul(freq_normalized.reshape(freq_normalized.shape[0], -1),
-                              freq_normalized.reshape(freq_normalized.shape[0], -1).T)
-    
-    mask = torch.ones(batch_size * n_vars, batch_size * n_vars)
-    b = torch.zeros(n_vars, n_vars)
-    
-    for i in range(batch_size):
-        mask[i * n_vars:(i + 1) * n_vars, i * n_vars:(i + 1) * n_vars] = b
-    mask = mask.to(x.device)
-    sim_matrix = sim_matrix.to(x.device)
-    sim_matrix = sim_matrix * mask
-
-    return sim_matrix
-
 class ContrastiveWeight_HN(nn.Module):
 
     def __init__(self, args):
