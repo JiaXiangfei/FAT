@@ -133,18 +133,6 @@ def cal_accuracy(y_pred, y_true):
 
 
 def compare_tensors(tensor1, tensor2):
-    """
-    Compares two PyTorch tensors element-wise and returns a tensor with 1 where tensor1 is greater than or
-    equal to tensor2, and 0 where tensor1 is less than tensor2.
-
-    Args:
-        tensor1 (torch.Tensor): A PyTorch tensor.
-        tensor2 (torch.Tensor): A PyTorch tensor with the same shape as tensor1.
-
-    Returns:
-        A PyTorch tensor with the same shape as tensor1, containing 1s where tensor1 is greater than or equal to
-        tensor2, and 0s where tensor1 is less than tensor2.
-    """
     # Use PyTorch's element-wise comparison function to create a tensor of 1s and 0s
     comparison = torch.ge(tensor1, tensor2)
 
@@ -335,14 +323,13 @@ def STFT(x, n_fft, hop_length, win_length, window, top_k, k):
     stft_result = torch.stft(x, n_fft=n_fft, hop_length=hop_length, win_length=win_length, window=window, return_complex=True)
     # Calculate magnitudes
     magnitude = torch.abs(stft_result)
-    # 对 freq 的行向量进行归一化
+    
     freq_normalized = torch.nn.functional.normalize(magnitude, p=2, dim=1)
-    # 计算归一化后的点积
+    
     sim_matrix = torch.matmul(freq_normalized.reshape(freq_normalized.shape[0],-1), freq_normalized.reshape(freq_normalized.shape[0],-1).T)
-    # 创建一个 112x112 的全1矩阵|
     mask = torch.ones(batch_size * n_vars, batch_size * n_vars)
     b = torch.zeros(n_vars, n_vars)
-    # 使用 for 循环遍历对角线上的每个小矩阵并设置为 0
+
     for i in range(batch_size):
         mask[i * n_vars:(i + 1) * n_vars, i * n_vars:(i + 1) * n_vars] = b
     mask = mask.to(x.device)
@@ -370,15 +357,15 @@ def FFT_sim(x, k):
     fft_result = torch.fft.fft(x)
     # Calculate magnitudes
     magnitude = torch.abs(fft_result)
-    # 对 freq 的行向量进行归一化
+    
     freq_normalized = torch.nn.functional.normalize(magnitude, p=2, dim=1)
-    # 计算归一化后的点积
+    
     sim_matrix = torch.matmul(freq_normalized.reshape(freq_normalized.shape[0], -1),
                               freq_normalized.reshape(freq_normalized.shape[0], -1).T)
-    # 创建一个 112x112 的全1矩阵|
+    
     mask = torch.ones(batch_size * n_vars, batch_size * n_vars)
     b = torch.zeros(n_vars, n_vars)
-    # 使用 for 循环遍历对角线上的每个小矩阵并设置为 0
+    
     for i in range(batch_size):
         mask[i * n_vars:(i + 1) * n_vars, i * n_vars:(i + 1) * n_vars] = b
     mask = mask.to(x.device)
@@ -470,15 +457,13 @@ def FFT_sim(x):
     fft_result = torch.fft.fft(x)
     # Calculate magnitudes
     magnitude = torch.abs(fft_result)
-    # 对 freq 的行向量进行归一化
+    
     freq_normalized = torch.nn.functional.normalize(magnitude, p=2, dim=1)
-    # 计算归一化后的点积
+    
     sim_matrix = torch.matmul(freq_normalized.reshape(freq_normalized.shape[0], -1),
                               freq_normalized.reshape(freq_normalized.shape[0], -1).T)
-    # 创建一个 112x112 的全1矩阵|
     mask = torch.ones(batch_size * n_vars, batch_size * n_vars)
     b = torch.zeros(n_vars, n_vars)
-    # 使用 for 循环遍历对角线上的每个小矩阵并设置为 0
     for i in range(batch_size):
         mask[i * n_vars:(i + 1) * n_vars, i * n_vars:(i + 1) * n_vars] = b
     mask = mask.to(x.device)
@@ -490,8 +475,7 @@ def FFT_sim(x):
 
 def get_record(path, content):
     try:
-        # 打开文件并写入内容
         with open(path, 'a', encoding='utf-8') as file:
             file.write(content)
     except Exception as e:
-        print(f"写入文件时发生错误: {e}")
+        print(f"Error: {e}")
