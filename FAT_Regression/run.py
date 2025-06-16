@@ -185,10 +185,8 @@ elif args.task_name == 'finetune':
             args.pretrain_mode
         )
 
-        if args.model == 'SimMTM':
-            args.load_checkpoints = os.path.join(args.pretrain_checkpoints, args.data, 'ckpt_best.pth')
-        else:
-            args.load_checkpoints = os.path.join(args.pretrain_checkpoints, args.data, args.exp_name, args.transfer_checkpoints.format(args.pretrain_mode))
+
+        args.load_checkpoints = os.path.join(args.pretrain_checkpoints, args.data, args.exp_name, args.transfer_checkpoints.format(args.pretrain_mode))
 
         exp = Exp(args)
 
