@@ -65,15 +65,7 @@ def get_batch_masks(batch,
                     context_ratio: list or tuple,
                     target_ratio: list or tuple,
                     target_num):
-    """
-    :param batch: batch size.
-    :param patch_num: patch num.
-    :param min_keep: the minimum size of context mask.
-    :param context_ratio: a list, context size ratio in [0, 1].
-    :param target_ratio: a list, target size ratio in [0, 1].
-    :param target_num: the number of target masks.
-    :return: a list [context_mask (batch, c_patch_num), target_masks (batch, target_num, t_patch_num)]
-    """
+
     context_masks = []
     target_masks = []
     min_context_mask_size = patch_num
@@ -87,19 +79,16 @@ def get_batch_masks(batch,
                 target_mask = get_context_mask(patch_num, target_ratio)
                 temp_mask = context_mask - target_mask
                 temp_mask_size = temp_mask[temp_mask > 0].numel()
-                # 如果context mask减去目标mask后剩余区域大于最小区域，则找到一个合适的目标mask
                 if temp_mask_size > min_keep:
                     valid_mask = True
                     context_mask = temp_mask
                     target_mask = torch.where(target_mask > 0)[0]
                     target_mask_size = target_mask.numel()
                     valid_masks.append(target_mask)
-                    # 记录最小的mask面积
                     min_context_mask_size = min(min_context_mask_size, temp_mask_size)
                     min_target_mask_size = min(min_target_mask_size, target_mask_size)
         context_masks.append(torch.where(context_mask > 0)[0])
         target_masks.append(valid_masks)
-    # 修正最小长度，保证所有mask长度相同
     for i in range(len(context_masks)):
         context_masks[i] = context_masks[i][:min_context_mask_size]
         for n in range(target_num):
@@ -239,7 +228,6 @@ def apply_freq_aug_mask(x: torch.Tensor, masks: torch.Tensor):
         result = result[:, :, c].unsqueeze(dim=1).repeat(1, target_num, 1)  # (Batch, Target_num, Freq_len)
         mask_amp = mask_inv * max_amp[..., c:c + 1]
         result = result * masks + mask_amp  # make the target freq components to be 0
-        # mask位置中原本已经是最大振幅的频率处从mask的prompt中去掉
         mask_amp[torch.arange(mask_amp.size(0)).unsqueeze(1),
                  torch.arange(mask_amp.size(1)).unsqueeze(0),
                  max_ind[:, c].unsqueeze(1)] = 0
